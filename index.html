@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        url += '?' + $.param({
+          'api-key': "7540dab658b44ac19bb3976ee1525f0c",
+          'q': "taco"
+        });
+        
+        $.ajax({
+          url: url,
+          method: 'GET',
+        }).done(function(result) {
+            
+          console.log(result);
+        }).fail(function(err) {
+          throw err;
+        });
+        
+        </script>
+</body>
+</html>
